@@ -60,7 +60,7 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://github.com/bytedance/tarsier">
+          <a class="navbar-item" href="https://github.com/NJU-MCG/VideoChat-Online">
             <b>VideoChat-Flash</b> 
           </a>
           <!-- <a class="navbar-item" href="https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models">
@@ -145,7 +145,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2407.00634"
+                <a href="https://arxiv.org/abs/2412.xxxxx"
                    class="external-link button is-normal is-rounded is-dark">
                 <!-- <a href="https://lupantech.github.io/papers/arxiv23_mathvista.pdf"
                    class="external-link button is-normal is-rounded is-dark"> -->
@@ -215,7 +215,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          Multimodal Large Language Models (MLLMs) have shown significant progress in offline video understanding. However, applying these models to real-world online scenarios, such as autonomous driving, augmented reality, and surveillance, presents unique challenges due to the need for real-time processing of continuous online video streams. This paper aims to alleviate this issue from three perspectives: evaluation benchmark, model architecture, and training strategy. First, we introduce <b>OnlineVideoBench</b>, a comprehensive question-answering benchmark specifically designed to evaluate models' ability to perceive, memorize, and reason within online video contexts. It features six core task types across three temporal contexts—past, present, and future—forming 16 subtasks from diverse datasets. Second, we propose a novel <b>P</b>yramid <b>M</b>emory <b>B</b>ank (<b>PMB</b>) that effectively retain key spatiotemporal information in video streams. Third, we proposed an offline-to-online learning paradigm, designing an interleaved dialogue format for online video data and constructing an instruction-tuning dataset tailored for online video training. This framework led to the development of <b>VideoChat-Online</b>, a robust and efficient model for online video understanding. Despite lower computational cost and higher efficiency, VideoChat-Online outperforms existing state-of-the-art offline and online models across popular offline video benchmarks and OnlineVideoBench, demonstrating the effectiveness of our model architecture and training strategy.
+          Multimodal Large Language Models (MLLMs) have shown significant progress in offline video understanding. However, applying these models to real-world online scenarios, such as autonomous driving, augmented reality, and surveillance, presents unique challenges due to the need for real-time processing of continuous online video streams. This paper aims to alleviate this issue from three perspectives: evaluation benchmark, model architecture, and training strategy. First, we introduce <b>OVBench</b>, a comprehensive question-answering benchmark specifically designed to evaluate models' ability to perceive, memorize, and reason within online video contexts. It features six core task types across three temporal contexts—past, present, and future—forming 16 subtasks from diverse datasets. Second, we propose a novel <b>P</b>yramid <b>M</b>emory <b>B</b>ank (<b>PMB</b>) that effectively retain key spatiotemporal information in video streams. Third, we proposed an offline-to-online learning paradigm, designing an interleaved dialogue format for online video data and constructing an instruction-tuning dataset tailored for online video training. This framework led to the development of <b>VideoChat-Online</b>, a robust and efficient model for online video understanding. Despite lower computational cost and higher efficiency, VideoChat-Online outperforms existing state-of-the-art offline and online models across popular offline video benchmarks and OVBench, demonstrating the effectiveness of our model architecture and training strategy.
         </div>
       </div>
     </div>
@@ -440,7 +440,7 @@
                 <td style="vertical-align: middle;"></td>
                 <td style="text-align: left; padding: 2px 10px;">
                   <b class="">
-                    <a href="https://arxiv.org/pdf/2408.03326" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-OneVision</a>
+                    <a href="https://arxiv.org/pdf/2412.xxxxx" class="ext-link" style="font-size: 16px; margin-left: 5px;">LLaVA-OneVision</a>
                     <p style="font-size: 12px; margin-left: 5px; color: #858383;">Bytedance</p>
                   </b>
                 </td>
@@ -844,7 +844,7 @@
     <div class="columns is-centered"></div>
       <div class="column">
         <div class="content has-text-centered">
-          <h2 class="title is-3">Generation Pipeline of OnlineVideoBench</h2>
+          <h2 class="title is-3">Generation Pipeline of OVBench</h2>
           <img src="static/images/generation_pipeline.png" alt="data-composition" style="max-width: 60%;"/>
           <p style="text-align: center; margin-left: auto; margin-right: auto; width: 80%;" >
           </p>
@@ -893,15 +893,12 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <pre><code>
-      @misc{wang2024tarsierrecipestrainingevaluating,
-        title={Tarsier: Recipes for Training and Evaluating Large Video Description Models}, 
-        author={Jiawei Wang and Liping Yuan and Yuchen Zhang and Haomiao Sun},
-        year={2024},
-        eprint={2407.00634},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV},
-        url={https://arxiv.org/abs/2407.00634}, 
-  }
+      @article{huang2024Online,
+        title={Online Video Understanding: A Comprehensive Benchmark and Memory-Augmented Method},
+        author={Zhenpeng Huang, Xinhao Li, Jiaqi Li, Jing Wang, Xiangyu Zeng, Cheng Liang, Tao Wu, Xi Chen, Liang Li, Limin Wang},
+        journal={arXiv preprint arXiv:2412.xxxx},
+        year={2024}
+      }
 </code></pre>
   </div>
 </section>

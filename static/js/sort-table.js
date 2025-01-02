@@ -84,8 +84,27 @@ function sortTable(Table, col, dir) {
     for (i = 0; i < TBody.rows.length; i++) {
         rows[i] = TBody.rows[i];
     }
+    // if ('none' != sortTable.sortFunc) {
+    //     rows.sort(sortTable.compareRow);
+    // }
+    // wj add
     if ('none' != sortTable.sortFunc) {
-        rows.sort(sortTable.compareRow);
+        rows.sort(function(a, b) {
+            var cellA = a.cells[col].textContent.trim(),
+            cellB = b.cells[col].textContent.trim();
+        
+            // 尝试将值转换为数字，如果转换失败则为字符串
+            cellA = +cellA || cellA;
+            cellB = +cellB || cellB;
+        
+            if (typeof cellA === 'number' && typeof cellB === 'number') {
+                // 如果都是数字，则进行数值比较
+                return sortTable.sortDir * (cellA - cellB);
+            } else {
+                // 如果有一个或多个是字符串，则进行字符串比较
+                return sortTable.sortDir * cellA.localeCompare(cellB);
+            }
+        });
     }
 
     while (TBody.firstChild) {

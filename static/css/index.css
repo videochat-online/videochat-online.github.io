@@ -146,7 +146,7 @@ body {
   font-size: 16px;
   font-family: 'Arial', sans-serif;
   margin-bottom: 20px;
-  max-height: 200px; /* 增大高度 */
+  max-height: 150px; /* 增大高度 */
   overflow-y: auto;
   line-height: 1.5; /* 改善文字间距 */
 }

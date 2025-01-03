@@ -93,15 +93,29 @@ function sortTable(Table, col, dir) {
             var cellA = a.cells[col].textContent.trim(),
             cellB = b.cells[col].textContent.trim();
         
-            // 尝试将值转换为数字，如果转换失败则为字符串
-            cellA = +cellA || cellA;
-            cellB = +cellB || cellB;
+            // // 尝试将值转换为数字，如果转换失败则为字符串
+            // cellA = +cellA || cellA;
+            // cellB = +cellB || cellB;
         
-            if (typeof cellA === 'number' && typeof cellB === 'number') {
-                // 如果都是数字，则进行数值比较
-                return sortTable.sortDir * (cellA - cellB);
+            // if (typeof cellA === 'number' && typeof cellB === 'number') {
+            //     // 如果都是数字，则进行数值比较
+            //     return sortTable.sortDir * (cellA - cellB);
+            // } else {
+            //     // 如果有一个或多个是字符串，则进行字符串比较
+            //     return sortTable.sortDir * cellA.localeCompare(cellB);
+            // }
+            // 尝试将值转换为数字
+            var numA = parseFloat(cellA);
+            var numB = parseFloat(cellB);
+
+            var isNumA = !isNaN(numA);
+            var isNumB = !isNaN(numB);
+
+            if (isNumA && isNumB) {
+                // 如果两者都是数字，则进行数值比较
+                return sortTable.sortDir * (numA - numB);
             } else {
-                // 如果有一个或多个是字符串，则进行字符串比较
+                // 如果有一个或两个不是数字，则进行字符串比较
                 return sortTable.sortDir * cellA.localeCompare(cellB);
             }
         });
@@ -329,3 +343,10 @@ window.addEventListener
 if (typeof NodeList.prototype.forEach !== "function") {
     NodeList.prototype.forEach = Array.prototype.forEach;
 }
+
+// wj add: 默认情况下按照"AVG"降序排列
+document.addEventListener('DOMContentLoaded', function() {
+    var table = document.getElementById('results'); // 获取表格元素
+    sortTable(table, 3, 'desc'); // 按第3列 (AVG) 进行降序排序
+});
+
